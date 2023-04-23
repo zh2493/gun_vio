@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Project proposal</title>
+
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/journal.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Home</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="About.html">About</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Exploratory Analyses
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="National-visualization-analysis.html">National Visualization Analysis</a>
+    </li>
+    <li>
+      <a href="NY-visualization-analysis.html">NY Visualization Analysis</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="time_series_analysis.html">Time Series Analysis Model</a>
+</li>
+<li>
+  <a href="Logistic_muder.html">Regression Model</a>
+</li>
+<li>
+  <a href="Final_project_report-1.html">Report</a>
+</li>
+<li>
+  <a href="https://gun-violence-p8105.shinyapps.io/shiny/">Shiny</a>
+</li>
+<li>
+  <a href="https://www.youtube.com/watch?v=9glfCfrTv-E">
+    <span class="fa fa-youtube fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://github.com/zh2493/gun_violence.github.io">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Project proposal</h1>
+
+</div>
+
+
+<div id="the-group-members-names-and-unis" class="section level2">
+<h2>The group members (names and UNIs)</h2>
+<p>Jie Liu(jl5788)<br />
+Xiaoluo Jiao (xj2278)<br />
+Ziqian He (zh2493)<br />
+Yu Si(ys3507)<br />
+Xinyuan Liu(xl3141)<br />
+Tianchuan Gao(tg2753)<br />
+</p>
+</div>
+<div id="the-tentative-project-title" class="section level2">
+<h2>The tentative project title</h2>
+<p>Relationship between gun crime rate and Covid-19 outbreak in US</p>
+</div>
+<div id="the-motivation-for-this-project" class="section level2">
+<h2>The motivation for this project</h2>
+<ul>
+<li>2020 is an unusual and turbulent year during which the world has struggled with a pandemic for a long time. Since January 15 2020 in which the first case of Covid-19 appeared in the United States, the epidemic has lasted 22 months and when it will end still remains uncertain. Under the influence of it, people’s lifestyle, mental health and some economic indicators like GDP, unemployment rate fluctuate dramatically in America.<br />
+</li>
+<li>In the meantime, 2020 was a record year for gun violence during which there was a huge increase in gun deaths compared with previous years, and 2021 is trending even higher. Many factors could be playing a role in the rise in gun violence,including the unprecedented surge in gun sales, hampered anti-crime efforts,racial strife spurred by the murder of George Floyd last year as well as pandemic.<br />
+</li>
+<li>On November 9, a heartbreaking news was reported that a 24-year-old graduate Chinese student was shot and killed in Chicago. Some still remembered another tragic news that Yiran Fan,a 30-year-old University of Chicago PH.D. student from Beijing, who was killed in January 2021 in a mass shooting. The victims of these two accidents are both Chinese students and murdered by gun. This brutal incident was reported on all social platforms and set us thinking deeply. As a team of Chinese, we feel griefful for ourour grief over compatriots’ death andmotivates us to investigate question the safety issues of studying in the U.S.<br />
+</li>
+<li>Under this circumstance,our group members are inspired to study gun violence and explore the relationship between gun crime rate and Covid-19 outbreak. We hypothesize that the rise of gun crime has a connection with the outbreak of Covid-19 and we propose a further conjecture that deterioration of mental health and decline of unemployment rate are two of factors which impact the increasing gun violence during epidemic.</li>
+</ul>
+</div>
+<div id="the-intended-final-products" class="section level2">
+<h2>The intended final products</h2>
+<ul>
+<li>Our intended final products include a report regarding the association between gun crime rate and the Covid-19 outbreak in U.S, a discussion about the possible contributors underlying this association (mental health status, unemployment rate, etc.), and heat maps for covid cases, mental health status, unemployment rate, and crime rate across different states in the US.<br />
+</li>
+<li>At the same time, we also plan to study the changes in the number of gun crimes in different areas under the influence of Covid-19 and explore the reasons for these different changes, especially in different areas of New York.</li>
+</ul>
+</div>
+<div id="the-anticipated-data-sources" class="section level2">
+<h2>The anticipated data sources</h2>
+<ul>
+<li>Gun Violence data:<br />
+<a href="https://www.gunviolencearchive.org" class="uri">https://www.gunviolencearchive.org</a><br />
+<a href="https://data.cityofnewyork.us/Public-Safety/NYPD-Shooting-Incident-Data-Historic-/833y-fsy8" class="uri">https://data.cityofnewyork.us/Public-Safety/NYPD-Shooting-Incident-Data-Historic-/833y-fsy8</a> <a href="https://data.cdc.gov/NCHS/Mental-Health-Care-in-the-Last-4-Weeks/yni7-er2q" class="uri">https://data.cdc.gov/NCHS/Mental-Health-Care-in-the-Last-4-Weeks/yni7-er2q</a></li>
+<li>Mental health:<br />
+<a href="https://www.cdc.gov/nchs/covid19/pulse/mental-health.htm" class="uri">https://www.cdc.gov/nchs/covid19/pulse/mental-health.htm</a><br />
+<a href="https://data.cdc.gov/NCHS/Mental-Health-Care-in-the-Last-4-Weeks/yni7-er2q" class="uri">https://data.cdc.gov/NCHS/Mental-Health-Care-in-the-Last-4-Weeks/yni7-er2q</a></li>
+<li>Unemployment rate:<br />
+<a href="https://beta.bls.gov/dataViewer/view/timeseries" class="uri">https://beta.bls.gov/dataViewer/view/timeseries</a></li>
+</ul>
+</div>
+<div id="the-planned-analyses-visualizations-coding-challenges" class="section level2">
+<h2>The planned analyses / visualizations / coding challenges</h2>
+<p>Visualize the trend in covid cases and mental health status(maybe with anxiety and depression symptoms) and analyze whether the changes in covid cases would have any influence on the survey results of mental health. We may also create a heat map for covid cases, mental health, and gun violence to provide the audience with a general idea of their prevalence.</p>
+</div>
+<div id="the-planned-timeline" class="section level2">
+<h2>The planned timeline</h2>
+<pre><code>## Warning: package &#39;tidyverse&#39; was built under R version 4.1.3</code></pre>
+<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.1.3</code></pre>
+<pre><code>## Warning: package &#39;tibble&#39; was built under R version 4.1.3</code></pre>
+<pre><code>## Warning: package &#39;tidyr&#39; was built under R version 4.1.3</code></pre>
+<pre><code>## Warning: package &#39;readr&#39; was built under R version 4.1.3</code></pre>
+<pre><code>## Warning: package &#39;purrr&#39; was built under R version 4.1.3</code></pre>
+<pre><code>## Warning: package &#39;dplyr&#39; was built under R version 4.1.3</code></pre>
+<pre><code>## Warning: package &#39;stringr&#39; was built under R version 4.1.3</code></pre>
+<pre><code>## Warning: package &#39;forcats&#39; was built under R version 4.1.3</code></pre>
+<pre><code>## Warning: package &#39;lubridate&#39; was built under R version 4.1.3</code></pre>
+<table>
+<colgroup>
+<col width="18%" />
+<col width="81%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">date</th>
+<th align="left">task</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Nov. 20</td>
+<td align="left">Decide the project description</td>
+</tr>
+<tr class="even">
+<td align="left">Nov. 20-Dec. 2</td>
+<td align="left">Visualize the data and analysis their association and create a heatmap</td>
+</tr>
+<tr class="odd">
+<td align="left">Dec. 2-Dec. 10</td>
+<td align="left">Optimize the plot and the webpage and make an explanatory video</td>
+</tr>
+<tr class="even">
+<td align="left">Dec. 11-Dec. 15</td>
+<td align="left">Make brief assessment and prepare discussion</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
