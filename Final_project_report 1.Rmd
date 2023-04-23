@@ -2,9 +2,8 @@
 title: "Report" 
 output: html_document
 ---
- 
- 
-```{r message=FALSE, echo=FALSE,warning = FALSE}
+
+```{r message=FALSE, echo=FALSE}
 library(tidyverse)
 library(ggplot2)
 library(rvest)
@@ -21,7 +20,7 @@ library(dplyr)
 
 ## Motivation
  
-This project is overall motivated by two gun violence incidents in 2021 in which two Chinese students were killed brutally. As a team of Chinese, we feel grief-stricken for our compatriots’ death and it motivates us to question and investigate the safety issues when studying in the U.S as international students. Under this circumstance, our group members are inspired to study gun violence and explore the relationship between gun crime rate and Covid-19 outbreak.
+This project is overall motivated by two gun violence incidents in 2021 in which two Chinese students  were killed brutally. As a team of Chinese, we feel grief-stricken for our compatriots’ death and it motivates us to question and investigate the safety issues when studying in the U.S as international students. Under this circumstance, our group members are inspired to study gun violence and explore the relationship between gun crime rate and Covid-19 outbreak.
  
 ## Motivating sources <br>
 
@@ -115,7 +114,7 @@ First of all, in the face of this data set, the name of each state is not direct
 ## Visualization
 
 
-```{r echo=FALSE,message = FALSE,warning = FALSE}
+```{r echo=FALSE,message = FALSE}
 gun_violence_state_df=
 read_csv("data/gun violence/mass shootings(all years).csv") %>% 
   janitor::clean_names() %>% 
@@ -131,7 +130,7 @@ read_csv("data/gun violence/mass shootings(all years).csv") %>%
 
 
 
-```{r echo=FALSE,message = FALSE,warning = FALSE}
+```{r echo=FALSE,message = FALSE}
 year_month_state_massshooting=
   gun_violence_state_df %>%
   group_by(year,month,state) %>% 
@@ -162,7 +161,7 @@ The plot above shows a fluctutation in national mass shooting number in US from 
 
 
 
-```{r echo=FALSE,message = FALSE,warning = FALSE}
+```{r echo=FALSE,message = FALSE}
 unemploy_gun <- read_csv("data/unemployment_gun.csv")
 UNRATE <- read_csv("data/unemployment rate/UNRATE.csv")
 unemploy_gun_IL = unemploy_gun %>% 
@@ -187,7 +186,7 @@ With the increase in shootings, we have paid more attention to shootings and bec
 
 
 
-```{r echo=FALSE,message = FALSE,warning = FALSE}
+```{r echo=FALSE,message = FALSE}
 mass_shooting_state=
   gun_violence_state_df %>% 
   group_by(state) %>%
@@ -204,7 +203,7 @@ mass_shooting_state %>%
 
 We arrange 48 states in an ascending way according to the number of mass shooting from 2018 to 2021. As shown in the bar chart, top 8 states are Illinois, California, Texas, Florida, Pennsylvania, Louisiana, New York and Ohio respectively. As one of city in Illinois, Chicago Leads the nation in mass shootings, averaging about one per week.
 
-```{r echo=FALSE,message = FALSE,warning = FALSE}
+```{r echo=FALSE,message = FALSE}
 plot_1 = unemploy_gun_IL %>% 
   ggplot(mapping = aes(x = time , y = value, group= 1)) + 
   geom_line()+theme(axis.text.x = element_text(angle = 90)) +
@@ -227,7 +226,7 @@ We chose Minnesota for a more in-depth analysis. The top is the change in the un
 
 
 
-```{r echo=FALSE,message = FALSE,warning = FALSE}
+```{r echo=FALSE,message = FALSE}
 historic_NYPD_df = read_csv("data/NYPD_Shooting_Incident_Data__Historic_.csv") %>%
   separate('OCCUR_DATE', into=c("month","day","year"),sep = "/") %>%
   filter(year>=2018)
@@ -238,7 +237,7 @@ df = bind_rows(historic_NYPD_df,year_to_date_df) %>%
 ```
 
 
-```{r echo=FALSE,message = FALSE,warning = FALSE}
+```{r echo=FALSE,message = FALSE}
 df_time = df %>%
   group_by(year,month) %>%
   summarise(count=n()) %>%
@@ -258,7 +257,7 @@ df_time%>%
 
 this is a plot showing the number of shooting incidents in NYC from January 2018 to January 2021 in months. we can see a big increase in April 2020 which match the time when COVID-19 outbreak happened in NYC. We assume the COVID-19 outbreak caused the increase of unemployment which leads to a big increase in shooting incidents.
 
-```{r echo=FALSE,message = FALSE,warning = FALSE}
+```{r echo=FALSE,message = FALSE}
 df_boro_before = df %>%
   arrange(year,month,day)%>%
   slice(1206:2205) %>%
@@ -284,7 +283,7 @@ df_boro%>%
 
 this plot compares the shooting incidents in five boroughs in NYC. we set April 2020 as the outbreak time and before covid means 365 days before April 2020 and post covid means 365 days after April 2020. we can see from the plot that Broolyn has the most shooting incidents and Staten Island has the least. we can the after covid, all boroughs increases in shooting incidents numbers while the order remains the same.
 
-```{r echo=FALSE,message = FALSE,warning = FALSE}
+```{r echo=FALSE,message = FALSE}
 df_boro_time = df %>%
   separate(occur_time,into = c("hour","minute","second"),sep = ":")%>%
   mutate(hour=as.numeric(hour),
